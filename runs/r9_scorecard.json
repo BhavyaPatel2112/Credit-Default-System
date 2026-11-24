@@ -1,0 +1,153 @@
+{
+  "run": "r9_scorecard",
+  "time": "2026-10-22 22:17:10",
+  "method": "WoE binning (optbinning) + logistic regression, 34 variables, 600 points at 50:1 odds of repaying, PDO 20",
+  "variables": [
+    "EXT_SOURCE_MEAN",
+    "EXT_SOURCE_3",
+    "BUR_DEBT_CREDIT_RATIO_MEAN",
+    "BUR_DEBT_CREDIT_RATIO_MAX",
+    "NAME_EDUCATION_TYPE_Secondary_/_secondary_special",
+    "EXT_SOURCE_2",
+    "NAME_EDUCATION_TYPE_Higher_education",
+    "GOODS_CREDIT_RATIO",
+    "EXT_SOURCE_1",
+    "INS_LATE_MEAN",
+    "DAYS_EMPLOYED",
+    "BUR_DAYS_CREDIT_MEAN",
+    "INS_DPD_MEAN",
+    "EXT_SOURCE_PROD",
+    "PREV_DAYS_FIRST_DRAWING_MAX",
+    "PREV_NAME_CONTRACT_STATUS_APPROVED_SHARE",
+    "PREV_NAME_CONTRACT_STATUS_REFUSED_SHARE",
+    "CC_CNT_DRAWINGS_CURRENT_MEAN",
+    "PREV_DAYS_DECISION_MIN",
+    "NAME_INCOME_TYPE_Working",
+    "PREV_AMT_DOWN_PAYMENT_MAX",
+    "REGION_RATING_CLIENT",
+    "CREDIT_TERM",
+    "INS_AMT_PAYMENT_SUM",
+    "INS_PAYMENT_PERC_MEAN",
+    "CC_UTIL_MEAN",
+    "PREV_NAME_YIELD_GROUP_HIGH_SHARE",
+    "PREV_CNT_PAYMENT_MAX",
+    "REGION_RATING_CLIENT_W_CITY",
+    "FLOORSMAX_AVG",
+    "CC_CNT_DRAWINGS_CURRENT_MAX",
+    "CC_AMT_DRAWINGS_CURRENT_MEAN",
+    "BUR_AMT_CREDIT_MAX_OVERDUE_SUM",
+    "PREV_APP_CREDIT_RATIO_MEAN"
+  ],
+  "score_range_test": {
+    "p1": 498.1967820564314,
+    "median": 570.6863348566754,
+    "p99": 631.6785678301629
+  },
+  "test": {
+    "roc_auc": 0.7629645742543042,
+    "pr_auc": 0.23466499427743107,
+    "brier": 0.0677831429879158,
+    "ece": 0.0015353689559981757,
+    "approval_rate": 0.8954408480933076,
+    "default_rate_among_approved": 0.05984892504357931,
+    "expected_cost_5to1": 0.34537255837145275,
+    "eo_gap_gender": 0.010116977469951771,
+    "eo_gap_age": 0.011517544132362612,
+    "ece_by_group": {
+      "Female|35 and over": 0.0081128920332136,
+      "Female|Under 35": 0.00791746711892569,
+      "Male|35 and over": 0.01818804382976125,
+      "Male|Under 35": 0.01286257040699136
+    },
+    "group_cutoffs": {
+      "Female|35 and over": 0.16666666666666666,
+      "Female|Under 35": 0.21149425287356322,
+      "Male|35 and over": 0.1671486837226548,
+      "Male|Under 35": 0.21776047460140896
+    }
+  },
+  "test_single_cutoff": {
+    "roc_auc": 0.7629645742543042,
+    "pr_auc": 0.23466499427743107,
+    "brier": 0.0677831429879158,
+    "ece": 0.0015353689559981757,
+    "approval_rate": 0.8614043835497648,
+    "default_rate_among_approved": 0.054764181809030046,
+    "expected_cost_5to1": 0.34090662735491145,
+    "eo_gap_gender": 0.024592761160000753,
+    "eo_gap_age": 0.12301734462405911,
+    "ece_by_group": {
+      "Female|35 and over": 0.0081128920332136,
+      "Female|Under 35": 0.00791746711892569,
+      "Male|35 and over": 0.01818804382976125,
+      "Male|Under 35": 0.01286257040699136
+    }
+  },
+  "champion_xgboost": {
+    "roc_auc": 0.7852644468668276,
+    "pr_auc": 0.2691032815543154,
+    "brier": 0.06609839200973511,
+    "ece": 0.003234510120689035,
+    "approval_rate": 0.9050014091529907,
+    "default_rate_among_approved": 0.057731464846089355,
+    "expected_cost_5to1": 0.32774730634986016,
+    "eo_gap_gender": 0.001971645579713077,
+    "eo_gap_age": 0.012353412050936097,
+    "ece_by_group": {
+      "Female|35 and over": 0.006589004370249179,
+      "Female|Under 35": 0.01076315830055784,
+      "Male|35 and over": 0.013937613298944888,
+      "Male|Under 35": 0.012486974411668642
+    }
+  },
+  "gate": [
+    {
+      "check": "NFR1  ROC-AUC >= 0.75, lower 95% bound",
+      "value": {
+        "point": 0.7629645742543042,
+        "low": 0.7557870860742973,
+        "high": 0.7706747796641183
+      },
+      "pass": true
+    },
+    {
+      "check": "NFR2  ECE <= 0.05, upper 95% bound",
+      "value": {
+        "point": 0.0015353689559981757,
+        "low": 0.0016084198913513276,
+        "high": 0.004778570587473077
+      },
+      "pass": true
+    },
+    {
+      "check": "NFR3  equal-opportunity gap (gender) <= 0.05, upper 95% bound",
+      "value": {
+        "point": 0.010116977469951771,
+        "low": 0.004696181104073442,
+        "high": 0.01594783648642819
+      },
+      "pass": true
+    },
+    {
+      "check": "NFR3  equal-opportunity gap (age <35 vs 35+) <= 0.05, upper 95% bound",
+      "value": {
+        "point": 0.011517544132362612,
+        "low": 0.005450605241154271,
+        "high": 0.01766004016217227
+      },
+      "pass": true
+    },
+    {
+      "check": "R-4   every gated group has >= 30 repayers",
+      "value": 4708,
+      "pass": true
+    },
+    {
+      "check": "INFO  gap across the four gender x age groups (reported, not gated)",
+      "value": 0.01646926704564533,
+      "pass": null
+    }
+  ],
+  "gate_passed": true,
+  "auc_gain_of_champion": 0.02229987261252342
+}

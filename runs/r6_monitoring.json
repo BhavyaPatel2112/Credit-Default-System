@@ -1,0 +1,127 @@
+{
+  "stable": {
+    "batch": "test split (no drift)",
+    "n": 46127,
+    "input_psi": {
+      "EXT_SOURCE_2": 0.0003329795453447722,
+      "EXT_SOURCE_3": 0.0004402608578458765,
+      "EXT_SOURCE_1": 0.0017362878794042718,
+      "AMT_INCOME_TOTAL": 0.0002635798712174723,
+      "AMT_CREDIT": 0.0007014566418594303,
+      "AMT_ANNUITY": 0.0010870226091959962,
+      "DAYS_EMPLOYED": 0.0006605658704543848,
+      "CREDIT_INCOME_RATIO": 0.0005470892764887205,
+      "ANNUITY_INCOME_RATIO": 0.0002530235662118093,
+      "INS_DPD_MEAN": 6.445390888099054e-05
+    },
+    "input_alerts": [],
+    "prediction_psi": 0.00014710162409514022,
+    "approval_rate_ref": 0.9149666666666667,
+    "approval_rate_batch": 0.9129577037310035,
+    "ece_batch": 0.003234510120689035,
+    "calibration_by_band": [
+      {
+        "band": "(0.0, 0.05]",
+        "n": 25359,
+        "mean_pd": 0.026906080543994904,
+        "realised": 0.027051539887219526
+      },
+      {
+        "band": "(0.05, 0.1]",
+        "n": 7514,
+        "mean_pd": 0.07691918313503265,
+        "realised": 0.07120042587170615
+      },
+      {
+        "band": "(0.1, 0.2]",
+        "n": 8442,
+        "mean_pd": 0.13845425844192505,
+        "realised": 0.13811892916370527
+      },
+      {
+        "band": "(0.2, 0.35]",
+        "n": 3238,
+        "mean_pd": 0.2528237998485565,
+        "realised": 0.2603458925262508
+      },
+      {
+        "band": "(0.35, 1.01]",
+        "n": 1111,
+        "mean_pd": 0.45622918009757996,
+        "realised": 0.44284428442844287
+      }
+    ],
+    "eo_gap_gender_batch": 0.022201197779601722,
+    "alerts": {
+      "input_drift": false,
+      "prediction_drift": false,
+      "calibration_decay": false,
+      "fairness_gap": false
+    },
+    "action": "none"
+  },
+  "drifted": {
+    "batch": "simulated drift",
+    "n": 46127,
+    "input_psi": {
+      "EXT_SOURCE_2": 0.0003329795453447722,
+      "EXT_SOURCE_3": 0.8692038491825265,
+      "EXT_SOURCE_1": 0.0017362878794042718,
+      "AMT_INCOME_TOTAL": 0.4220318882633412,
+      "AMT_CREDIT": 0.0007014566418594303,
+      "AMT_ANNUITY": 0.0010870226091959962,
+      "DAYS_EMPLOYED": 0.0006605658704543848,
+      "CREDIT_INCOME_RATIO": 0.11245018428573599,
+      "ANNUITY_INCOME_RATIO": 0.18157615543323177,
+      "INS_DPD_MEAN": 6.445390888099054e-05
+    },
+    "input_alerts": [
+      "EXT_SOURCE_3",
+      "AMT_INCOME_TOTAL"
+    ],
+    "prediction_psi": 0.0048403218023290815,
+    "approval_rate_ref": 0.9149666666666667,
+    "approval_rate_batch": 0.9255533635397923,
+    "ece_batch": 0.012683214048377522,
+    "calibration_by_band": [
+      {
+        "band": "(0.0, 0.05]",
+        "n": 26364,
+        "mean_pd": 0.026678647845983505,
+        "realised": 0.03387194659384009
+      },
+      {
+        "band": "(0.05, 0.1]",
+        "n": 7588,
+        "mean_pd": 0.07665194571018219,
+        "realised": 0.08513442277279916
+      },
+      {
+        "band": "(0.1, 0.2]",
+        "n": 8123,
+        "mean_pd": 0.13761375844478607,
+        "realised": 0.16127046657638802
+      },
+      {
+        "band": "(0.2, 0.35]",
+        "n": 2713,
+        "mean_pd": 0.25236940383911133,
+        "realised": 0.2900847769996314
+      },
+      {
+        "band": "(0.35, 1.01]",
+        "n": 836,
+        "mean_pd": 0.44552114605903625,
+        "realised": 0.4868421052631579
+      }
+    ],
+    "eo_gap_gender_batch": 0.01876539075086503,
+    "alerts": {
+      "input_drift": true,
+      "prediction_drift": false,
+      "calibration_decay": false,
+      "fairness_gap": false
+    },
+    "action": "retrain (7 -> 3)"
+  }
+}

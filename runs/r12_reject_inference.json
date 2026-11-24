@@ -1,0 +1,123 @@
+{
+  "run": "r12_reject_inference",
+  "time": "2026-10-22 22:20:54",
+  "part_a_how_different": {
+    "n_refused": 290678,
+    "n_approved": 1036781,
+    "standardised_mean_difference": {
+      "AMT_APPLICATION": -0.15002173068472238,
+      "AMT_CREDIT": -0.18399254159487724,
+      "AMT_ANNUITY": 0.38604965243867023,
+      "AMT_GOODS_PRICE": 0.33279314053929526,
+      "CNT_PAYMENT": 0.15776748489167836
+    },
+    "median_refused": {
+      "AMT_APPLICATION": 166050.0,
+      "AMT_CREDIT": 182956.5,
+      "AMT_ANNUITY": 15653.880000000001,
+      "AMT_GOODS_PRICE": 225000.0,
+      "CNT_PAYMENT": 18.0
+    },
+    "median_approved": {
+      "AMT_APPLICATION": 90000.0,
+      "AMT_CREDIT": 102208.5,
+      "AMT_ANNUITY": 10380.24,
+      "AMT_GOODS_PRICE": 96709.5,
+      "CNT_PAYMENT": 12.0
+    },
+    "contract_type_share": {
+      "refused": {
+        "Cash loans": 0.5708,
+        "Consumer loans": 0.2587,
+        "Revolving loans": 0.1704,
+        "XNA": 0.0001
+      },
+      "approved": {
+        "Consumer loans": 0.6042,
+        "Cash loans": 0.3015,
+        "Revolving loans": 0.0943
+      }
+    },
+    "price_band_share": {
+      "refused": {
+        "XNA": 0.3015,
+        "low_normal": 0.2427,
+        "middle": 0.2032,
+        "high": 0.1832,
+        "low_action": 0.0695
+      },
+      "approved": {
+        "middle": 0.3116,
+        "high": 0.2884,
+        "low_normal": 0.2373,
+        "XNA": 0.0943,
+        "low_action": 0.0684
+      }
+    },
+    "reject_reason_share": {
+      "HC": 0.6028,
+      "LIMIT": 0.1916,
+      "SCO": 0.1289,
+      "SCOFR": 0.0441,
+      "XNA": 0.018,
+      "VERIF": 0.0122,
+      "SYSTEM": 0.0025,
+      "XAP": 0.0
+    },
+    "default_rate_later_loan": {
+      "with_a_past_refusal": 0.10316317657624267,
+      "without": 0.06988139459556315,
+      "share_with_refusal": 0.32589870571510865
+    }
+  },
+  "reject_sample": {
+    "train": 64075,
+    "test": 13826,
+    "construction": "latest refused previous application per applicant, on that applicant's application-level features; amounts from the refused application; employment and registration dates moved back to the refusal date"
+  },
+  "accept_vs_reject_auc": 0.915918597942492,
+  "parcelling_uplift": 2.0,
+  "parcelling_rejects_assigned_default_rate": 0.16078033554428403,
+  "augmentation_weight_p99": 1.7972360849380493,
+  "models": [
+    {
+      "model": "accepts only (no reject inference)",
+      "test_auc": 0.7621826575916885,
+      "test_ece": 0.002785999239019885,
+      "test_approval_at_1_6": 0.8681032800745767,
+      "rejects_mean_pd": 0.08088603615760803,
+      "rejects_approval_at_1_6": 0.8750904093736439
+    },
+    {
+      "model": "parcelling (reject bad rate = 2x accepts' band rate)",
+      "test_auc": 0.7597876006533696,
+      "test_ece": 0.0017659243139796683,
+      "test_approval_at_1_6": 0.8885901966310404,
+      "rejects_mean_pd": 0.11023001372814178,
+      "rejects_approval_at_1_6": 0.8133227253001591
+    },
+    {
+      "model": "augmentation (accepts weighted by 1 / P(accept))",
+      "test_auc": 0.7633358107553392,
+      "test_ece": 0.0014116392763515685,
+      "test_approval_at_1_6": 0.8660871073340993,
+      "rejects_mean_pd": 0.08140303939580917,
+      "rejects_approval_at_1_6": 0.8721249819181253
+    }
+  ],
+  "change_vs_accepts_only": [
+    {
+      "model": "parcelling (reject bad rate = 2x accepts' band rate)",
+      "auc_change": -0.0023950569383188736,
+      "ece_change": -0.0010200749250402167,
+      "rejects_mean_pd_change": 0.029343977570533752
+    },
+    {
+      "model": "augmentation (accepts weighted by 1 / P(accept))",
+      "auc_change": 0.001153153163650722,
+      "ece_change": -0.0013743599626683165,
+      "rejects_mean_pd_change": 0.0005170032382011414
+    }
+  ],
+  "features": "application-level only (211); history tables excluded from this experiment"
+}
