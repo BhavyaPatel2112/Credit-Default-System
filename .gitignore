@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+# Kaggle data and everything derived from it: not ours to publish
+data/raw/
+data/processed/*.parquet
+home-credit-default-risk*/
+home-credit-default-risk.zip
+# Runtime
+logs/
+# Console build tooling (web/dist is kept so no Node is needed to run)
+web/node_modules/
+.DS_Store
+
+# Local tool settings (absolute paths on one machine)
+.claude/
+
+# TypeScript incremental build cache
+web/tsconfig.tsbuildinfo

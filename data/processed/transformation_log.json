@@ -1,0 +1,142 @@
+[
+  {
+    "step": "load",
+    "detail": "application_train: 307,511 rows x 122 cols, 24,825 defaults (8.0729%)",
+    "rows_affected": null
+  },
+  {
+    "step": "clean",
+    "detail": "CODE_GENDER == 'XNA' rows removed (gender unknown, cannot be audited)",
+    "rows_affected": 4
+  },
+  {
+    "step": "clean",
+    "detail": "DAYS_EMPLOYED == 365243 decoded to NaN + flag DAYS_EMPLOYED_ANOM",
+    "rows_affected": 55374
+  },
+  {
+    "step": "clean",
+    "detail": "EXT_SOURCE_1 missingness flag added",
+    "rows_affected": 173376
+  },
+  {
+    "step": "clean",
+    "detail": "EXT_SOURCE_2 missingness flag added",
+    "rows_affected": 660
+  },
+  {
+    "step": "clean",
+    "detail": "EXT_SOURCE_3 missingness flag added",
+    "rows_affected": 60965
+  },
+  {
+    "step": "feature",
+    "detail": "7 application-level ratio features added",
+    "rows_affected": null
+  },
+  {
+    "step": "cutoff",
+    "detail": "bureau_balance: dropped records dated on/after application",
+    "rows_affected": 610965
+  },
+  {
+    "step": "cutoff",
+    "detail": "bureau: dropped records dated on/after application",
+    "rows_affected": 25
+  },
+  {
+    "step": "cutoff",
+    "detail": "bureau.DAYS_ENDDATE_FACT: observed date after application -> NaN",
+    "rows_affected": 64
+  },
+  {
+    "step": "cutoff",
+    "detail": "bureau.DAYS_CREDIT_UPDATE: observed date after application -> NaN",
+    "rows_affected": 621
+  },
+  {
+    "step": "aggregate",
+    "detail": "bureau + bureau_balance -> 75 features",
+    "rows_affected": null
+  },
+  {
+    "step": "clean",
+    "detail": "previous_application.DAYS_FIRST_DRAWING sentinel 365243 -> NaN",
+    "rows_affected": 934444
+  },
+  {
+    "step": "clean",
+    "detail": "previous_application.DAYS_FIRST_DUE sentinel 365243 -> NaN",
+    "rows_affected": 40645
+  },
+  {
+    "step": "clean",
+    "detail": "previous_application.DAYS_LAST_DUE_1ST_VERSION sentinel 365243 -> NaN",
+    "rows_affected": 93864
+  },
+  {
+    "step": "clean",
+    "detail": "previous_application.DAYS_LAST_DUE sentinel 365243 -> NaN",
+    "rows_affected": 211221
+  },
+  {
+    "step": "clean",
+    "detail": "previous_application.DAYS_TERMINATION sentinel 365243 -> NaN",
+    "rows_affected": 225913
+  },
+  {
+    "step": "cutoff",
+    "detail": "previous_application: dropped records dated on/after application",
+    "rows_affected": 0
+  },
+  {
+    "step": "cutoff",
+    "detail": "previous_application.DAYS_LAST_DUE: observed date after application -> NaN",
+    "rows_affected": 0
+  },
+  {
+    "step": "cutoff",
+    "detail": "previous_application.DAYS_TERMINATION: observed date after application -> NaN",
+    "rows_affected": 0
+  },
+  {
+    "step": "aggregate",
+    "detail": "previous_application -> 74 features",
+    "rows_affected": null
+  },
+  {
+    "step": "cutoff",
+    "detail": "POS_CASH_balance: dropped records dated on/after application",
+    "rows_affected": 0
+  },
+  {
+    "step": "aggregate",
+    "detail": "POS_CASH_balance -> 13 features",
+    "rows_affected": null
+  },
+  {
+    "step": "cutoff",
+    "detail": "installments_payments: dropped records dated on/after application",
+    "rows_affected": 0
+  },
+  {
+    "step": "aggregate",
+    "detail": "installments_payments -> 22 features",
+    "rows_affected": null
+  },
+  {
+    "step": "cutoff",
+    "detail": "credit_card_balance: dropped records dated on/after application",
+    "rows_affected": 0
+  },
+  {
+    "step": "aggregate",
+    "detail": "credit_card_balance -> 15 features",
+    "rows_affected": null
+  },
+  {
+    "step": "assemble",
+    "detail": "modelling table: 307,507 applicants x 331 columns",
+    "rows_affected": null
+  }
+]
