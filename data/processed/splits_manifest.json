@@ -1,0 +1,16 @@
+{
+  "train": {
+    "n": 215254,
+    "sha256": "2596ebef9cfba4d6cd6a7796f682968e7bc7184c4edcf8a4dd833f9e5e758251"
+  },
+  "valid": {
+    "n": 46126,
+    "sha256": "9ebf06e5a0c27687754ec4098178e426b6960ff32846a64a0c88a1a59d17bb09"
+  },
+  "test": {
+    "n": 46127,
+    "sha256": "fbd0354d4bec21d26703233bd8e1fde3d0dfb2f79446eb47a6c20adf1bf73b85"
+  },
+  "seed": 42,
+  "stratified_on": "TARGET x gender"
+}

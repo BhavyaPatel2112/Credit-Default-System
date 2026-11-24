@@ -1,0 +1,103 @@
+{
+  "n_applicants": 307507,
+  "n_defaults": 24825,
+  "base_rate": 0.08072986956394489,
+  "default_rate_by_group": {
+    "gender": {
+      "Female": {
+        "n": 202448,
+        "defaults": 14170,
+        "default_rate": 0.06999328222555916
+      },
+      "Male": {
+        "n": 105059,
+        "defaults": 10655,
+        "default_rate": 0.1014192025433328
+      }
+    },
+    "age_band": {
+      "25-34": {
+        "n": 72427,
+        "defaults": 7721,
+        "default_rate": 0.10660389081419913
+      },
+      "35-44": {
+        "n": 84260,
+        "defaults": 7085,
+        "default_rate": 0.08408497507714217
+      },
+      "45-54": {
+        "n": 70190,
+        "defaults": 4946,
+        "default_rate": 0.07046587833024648
+      },
+      "55+": {
+        "n": 68397,
+        "defaults": 3569,
+        "default_rate": 0.05218065119815197
+      },
+      "<25": {
+        "n": 12233,
+        "defaults": 1504,
+        "default_rate": 0.12294612932232486
+      }
+    },
+    "family_status": {
+      "Civil marriage": {
+        "n": 29774,
+        "defaults": 2961,
+        "default_rate": 0.09944918385168268
+      },
+      "Married": {
+        "n": 196429,
+        "defaults": 14850,
+        "default_rate": 0.07559983505490533
+      },
+      "Separated": {
+        "n": 19770,
+        "defaults": 1620,
+        "default_rate": 0.0819423368740516
+      },
+      "Single / not married": {
+        "n": 45444,
+        "defaults": 4457,
+        "default_rate": 0.0980767538068832
+      },
+      "Unknown": {
+        "n": 2,
+        "defaults": 0,
+        "default_rate": 0.0
+      },
+      "Widow": {
+        "n": 16088,
+        "defaults": 937,
+        "default_rate": 0.058242168075584286
+      }
+    }
+  },
+  "columns_over_50pct_missing": 74,
+  "top_missing": {
+    "PREV_RATE_INTEREST_PRIMARY_MEAN": 0.9850117233103637,
+    "PREV_RATE_INTEREST_PRIMARY_MAX": 0.9850117233103637,
+    "PREV_RATE_INTEREST_PRIMARY_MIN": 0.9850117233103637,
+    "PREV_RATE_INTEREST_PRIVILEGED_MEAN": 0.9850117233103637,
+    "PREV_RATE_INTEREST_PRIVILEGED_MAX": 0.9850117233103637,
+    "PREV_RATE_INTEREST_PRIVILEGED_MIN": 0.9850117233103637,
+    "PREV_DAYS_FIRST_DRAWING_MEAN": 0.8265015105347195,
+    "PREV_DAYS_FIRST_DRAWING_MAX": 0.8265015105347195,
+    "PREV_DAYS_FIRST_DRAWING_MIN": 0.8265015105347195,
+    "BUR_AMT_ANNUITY_MAX": 0.7398140530134273
+  },
+  "ext_source_missing": {
+    "EXT_SOURCE_1": 0.5638115555093055,
+    "EXT_SOURCE_2": 0.0021462926047211934,
+    "EXT_SOURCE_3": 0.19825564946489024
+  },
+  "days_employed_sentinel_share": 0.1800739495361081,
+  "days_employed_sentinel_default_rate": 0.05399646043269404,
+  "days_employed_normal_default_rate": 0.08660111925055428,
+  "income_p99": 472500.0,
+  "income_max": 117000000.0,
+  "has_bureau_history": 0.8568455352235884,
+  "has_previous_application": 0.9464922749726022
+}

@@ -1,0 +1,26 @@
+{
+  "run": "r2c_without_flagged_proxies",
+  "time": "2026-10-22 22:24:36",
+  "removed": [
+    "CNT_FAM_MEMBERS",
+    "DAYS_EMPLOYED_ANOM",
+    "FLAG_EMP_PHONE",
+    "NAME_INCOME_TYPE_Pensioner",
+    "OCCUPATION_TYPE_nan",
+    "ORGANIZATION_TYPE_XNA"
+  ],
+  "features": 395,
+  "test": {
+    "roc_auc": 0.7845074274911086,
+    "pr_auc": 0.27222771495243914,
+    "brier": 0.06596237421035767,
+    "ece": 0.00339204133235757,
+    "threshold": 0.16666666666666666,
+    "approval_rate": 0.845426756563401,
+    "default_rate_among_approved": 0.04849090955714542,
+    "share_of_defaulters_declined": 0.4922126745435016,
+    "share_of_repayers_approved": 0.8750795934249935,
+    "eo_gap_gender": 0.04537881336815963,
+    "eo_gap_age": 0.12959138728804132
+  }
+}
