@@ -1,0 +1,20 @@
+name: model-gate
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        # 3.12 or newer: xgboost 3.4.1 and shap 0.53.0 publish no wheels for 3.11
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Leakage, service and gate tests
+        run: pytest -q tests
+      - name: Integrity, accuracy, calibration and fairness gate (G1-G3, NFR1-NFR3)
+        run: python src/gate.py
+      - name: The scoring container builds
+        run: docker build -t cap501-scoring .

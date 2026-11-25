@@ -1,0 +1,15 @@
+{
+  "type": "expected_profit",
+  "economics": {
+    "lgd": 0.45,
+    "monthly_rate": 0.0333,
+    "margin_kept": 0.25,
+    "fixed_cost": 5000.0
+  },
+  "offsets": {
+    "Female|35 and over": -851.627382561276,
+    "Female|Under 35": -7755.638052092625,
+    "Male|35 and over": -690.5861873394856,
+    "Male|Under 35": -13653.854713206145
+  }
+}

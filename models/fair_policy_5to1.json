@@ -1,0 +1,10 @@
+{
+  "type": "group_thresholds",
+  "attribute": "gender|age_under_35",
+  "thresholds": {
+    "Female|35 and over": 0.1671486837226548,
+    "Female|Under 35": 0.2235446792732666,
+    "Male|35 and over": 0.1753429736744531,
+    "Male|Under 35": 0.2640341119762699
+  }
+}

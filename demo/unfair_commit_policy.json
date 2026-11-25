@@ -1,0 +1,5 @@
+{
+  "type": "single_threshold",
+  "comment": "DELIBERATELY UNFAIR COMMIT for the M8 demo: reverts to one cut-off for everyone, dropping the group cut-offs. Accuracy is unchanged, but the age gap returns.",
+  "thresholds": {"all": 0.16666666666666666}
+}

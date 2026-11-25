@@ -1,0 +1,269 @@
+{
+  "run": "r4_operating_point",
+  "time": "2026-10-22 22:28:49",
+  "policy": {
+    "type": "group-specific cut-offs on calibrated PD, levelling up only (no cut-off below 1/6)",
+    "groups": "gender x age (under 35 / 35+)",
+    "eps_target_on_valid": 0.03,
+    "thresholds": {
+      "Female|35 and over": 0.1671486837226548,
+      "Female|Under 35": 0.2235446792732666,
+      "Male|35 and over": 0.1753429736744531,
+      "Male|Under 35": 0.2640341119762699
+    }
+  },
+  "test": {
+    "roc_auc": 0.7852644468668276,
+    "pr_auc": 0.2691032815543154,
+    "brier": 0.06609839200973511,
+    "ece": 0.003234510120689035,
+    "threshold": NaN,
+    "approval_rate": 0.9050014091529907,
+    "default_rate_among_approved": 0.057731464846089355,
+    "share_of_defaulters_declined": 0.35284640171858217,
+    "share_of_repayers_approved": 0.9276466287762658,
+    "eo_gap_gender": 0.001971645579713077,
+    "eo_gap_age": 0.012353412050936097,
+    "expected_cost": 0.32774730634986016
+  },
+  "bootstrap_95": {
+    "auc": {
+      "point": 0.7852644468668276,
+      "low": 0.7782176030802823,
+      "high": 0.7927195891448933
+    },
+    "ece": {
+      "point": 0.0032345055628678707,
+      "low": 0.0024209266230891084,
+      "high": 0.006012372243255573
+    },
+    "eo_gap_gender": {
+      "point": 0.001971645579713077,
+      "low": 0.00012065362416338885,
+      "high": 0.007116177283501994
+    },
+    "eo_gap_age": {
+      "point": 0.012353412050936097,
+      "low": 0.006180272028298148,
+      "high": 0.018383135313797348
+    },
+    "B": 1000,
+    "level": 0.95
+  },
+  "gate": {
+    "NFR1": true,
+    "NFR2": true,
+    "NFR3_gender": true,
+    "NFR3_age": true
+  },
+  "group_rates_gender": [
+    {
+      "group": "Female",
+      "n_applicants": 30368,
+      "n_repayers": 28242,
+      "n_defaults": 2126,
+      "approval_rate": 0.90625,
+      "tpr_repayers": 0.9269881736420933,
+      "ci_low": 0.9238955664071276,
+      "ci_high": 0.9299646350888688,
+      "default_rate": 0.07000790305584827
+    },
+    {
+      "group": "Male",
+      "n_applicants": 15759,
+      "n_repayers": 14161,
+      "n_defaults": 1598,
+      "approval_rate": 0.9025953423440574,
+      "tpr_repayers": 0.9289598192218064,
+      "ci_low": 0.9246112954596434,
+      "ci_high": 0.9330756694267129,
+      "default_rate": 0.10140237324703344
+    }
+  ],
+  "group_rates_age": [
+    {
+      "group": "35 and over",
+      "n_applicants": 33347,
+      "n_repayers": 31026,
+      "n_defaults": 2321,
+      "approval_rate": 0.9103067742225688,
+      "tpr_repayers": 0.9309611293753626,
+      "ci_low": 0.9280864274476711,
+      "ci_high": 0.9337291223938723,
+      "default_rate": 0.069601463400006
+    },
+    {
+      "group": "Under 35",
+      "n_applicants": 12780,
+      "n_repayers": 11377,
+      "n_defaults": 1403,
+      "approval_rate": 0.8911580594679186,
+      "tpr_repayers": 0.9186077173244265,
+      "ci_low": 0.9134407082942265,
+      "ci_high": 0.9234921245113897,
+      "default_rate": 0.1097809076682316
+    }
+  ],
+  "group_rates_intersection": [
+    {
+      "group": "Female|35 and over",
+      "n_applicants": 22927,
+      "n_repayers": 21573,
+      "n_defaults": 1354,
+      "approval_rate": 0.9154708422384089,
+      "tpr_repayers": 0.9333426041811523,
+      "ci_low": 0.9299363761718068,
+      "ci_high": 0.9365945251812439,
+      "default_rate": 0.05905700702228813
+    },
+    {
+      "group": "Female|Under 35",
+      "n_applicants": 7441,
+      "n_repayers": 6669,
+      "n_defaults": 772,
+      "approval_rate": 0.8778390001343905,
+      "tpr_repayers": 0.9064327485380117,
+      "ci_low": 0.8992072080305292,
+      "ci_high": 0.9131903168859922,
+      "default_rate": 0.1037494960354791
+    },
+    {
+      "group": "Male|35 and over",
+      "n_applicants": 10420,
+      "n_repayers": 9453,
+      "n_defaults": 967,
+      "approval_rate": 0.8989443378119002,
+      "tpr_repayers": 0.9255262879509151,
+      "ci_low": 0.9200591049722482,
+      "ci_high": 0.9306477525900061,
+      "default_rate": 0.09280230326295585
+    },
+    {
+      "group": "Male|Under 35",
+      "n_applicants": 5339,
+      "n_repayers": 4708,
+      "n_defaults": 631,
+      "approval_rate": 0.909720921520884,
+      "tpr_repayers": 0.9358538657604079,
+      "ci_low": 0.9284934885689181,
+      "ci_high": 0.9425035330627088,
+      "default_rate": 0.11818692639070986
+    }
+  ],
+  "ece_by_gender": {
+    "Female": 0.006303840339357632,
+    "Male": 0.00922550691365089
+  },
+  "ece_by_age": {
+    "Under 35": 0.0071628008203957,
+    "35 and over": 0.004571123956330506
+  },
+  "baseline_group_rates_gender": [
+    {
+      "group": "Female",
+      "n_applicants": 30368,
+      "n_repayers": 28242,
+      "n_defaults": 2126,
+      "approval_rate": 0.8825737618545838,
+      "tpr_repayers": 0.9066992422632958,
+      "ci_low": 0.903251499835864,
+      "ci_high": 0.91003635772969,
+      "default_rate": 0.07000790305584827
+    },
+    {
+      "group": "Male",
+      "n_applicants": 15759,
+      "n_repayers": 14161,
+      "n_defaults": 1598,
+      "approval_rate": 0.8362840281743765,
+      "tpr_repayers": 0.8707012216651366,
+      "ci_low": 0.8650741379664976,
+      "ci_high": 0.8761272320509407,
+      "default_rate": 0.10140237324703344
+    }
+  ],
+  "baseline_group_rates_age": [
+    {
+      "group": "35 and over",
+      "n_applicants": 33347,
+      "n_repayers": 31026,
+      "n_defaults": 2321,
+      "approval_rate": 0.9039193930488499,
+      "tpr_repayers": 0.9257719332173017,
+      "ci_low": 0.9228019736754374,
+      "ci_high": 0.9286364687302759,
+      "default_rate": 0.069601463400006
+    },
+    {
+      "group": "Under 35",
+      "n_applicants": 12780,
+      "n_repayers": 11377,
+      "n_defaults": 1403,
+      "approval_rate": 0.7697965571205008,
+      "tpr_repayers": 0.8098795816120242,
+      "ci_low": 0.8025649166007967,
+      "ci_high": 0.8169850470855444,
+      "default_rate": 0.1097809076682316
+    }
+  ],
+  "baseline_group_rates_intersection": [
+    {
+      "group": "Female|35 and over",
+      "n_applicants": 22927,
+      "n_repayers": 21573,
+      "n_defaults": 1354,
+      "approval_rate": 0.9154272255419375,
+      "tpr_repayers": 0.9332962499420572,
+      "ci_low": 0.9298889563174993,
+      "ci_high": 0.9365492530634324,
+      "default_rate": 0.05905700702228813
+    },
+    {
+      "group": "Female|Under 35",
+      "n_applicants": 7441,
+      "n_repayers": 6669,
+      "n_defaults": 772,
+      "approval_rate": 0.7813465931998387,
+      "tpr_repayers": 0.8206627680311891,
+      "ci_low": 0.8112714265724591,
+      "ci_high": 0.8296848940451321,
+      "default_rate": 0.1037494960354791
+    },
+    {
+      "group": "Male|35 and over",
+      "n_applicants": 10420,
+      "n_repayers": 9453,
+      "n_defaults": 967,
+      "approval_rate": 0.8785988483685221,
+      "tpr_repayers": 0.9086004443033957,
+      "ci_low": 0.902623890068996,
+      "ci_high": 0.9142450315802784,
+      "default_rate": 0.09280230326295585
+    },
+    {
+      "group": "Male|Under 35",
+      "n_applicants": 5339,
+      "n_repayers": 4708,
+      "n_defaults": 631,
+      "approval_rate": 0.7536991946057314,
+      "tpr_repayers": 0.7946049277824979,
+      "ci_low": 0.7828268680350845,
+      "ci_high": 0.8059026002899967,
+      "default_rate": 0.11818692639070986
+    }
+  ],
+  "baseline_metrics": {
+    "roc_auc": 0.7852644468668276,
+    "pr_auc": 0.2691032815543154,
+    "brier": 0.06609839200973511,
+    "ece": 0.003234510120689035,
+    "threshold": 0.16666666666666666,
+    "approval_rate": 0.8667591649142584,
+    "default_rate_among_approved": 0.05112428403491658,
+    "share_of_defaulters_declined": 0.45112781954887216,
+    "share_of_repayers_approved": 0.8946772634011745,
+    "eo_gap_gender": 0.03599802059815915,
+    "eo_gap_age": 0.11589235160527744,
+    "expected_cost": 0.3183818587811911
+  }
+}

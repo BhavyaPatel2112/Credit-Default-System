@@ -1,0 +1,311 @@
+{
+  "run": "r11_stress_capital",
+  "time": "2026-10-22 22:18:51",
+  "scenarios": [
+    {
+      "scenario": "baseline",
+      "pd_factor": 1.0,
+      "logodds_shift": 0.0,
+      "lgd": 0.45,
+      "mean_pd": 0.08139760792255402,
+      "policies": {
+        "single cut-off 1/6": {
+          "book": {
+            "approved": 39981,
+            "exposure": 24610628524.5,
+            "expected_loss": 561512916.9365301,
+            "capital": 1247959213.4469008,
+            "rwa": 15599490168.08626,
+            "capital_per_exposure": 0.05070814068013547,
+            "mean_pd_approved": 0.05275210365653038
+          },
+          "lending": {
+            "approval_rate": 0.8667591649142584,
+            "eo_gap_gender": 0.03599802059815915,
+            "eo_gap_age": 0.11589235160527744,
+            "eo_gap_intersection": 0.13869132215955926,
+            "within_limit": false,
+            "capital_expected_loss": 561512916.9365301,
+            "capital_capital": 1247959213.4469008,
+            "capital_capital_per_exposure": 0.05070814068013547
+          }
+        },
+        "5:1 group cut-offs (1.2)": {
+          "book": {
+            "approved": 41745,
+            "exposure": 25496050909.5,
+            "expected_loss": 641691155.2432137,
+            "capital": 1318765421.5489476,
+            "rwa": 16484567769.361845,
+            "capital_per_exposure": 0.0517243013920076,
+            "mean_pd_approved": 0.0590876042842865
+          },
+          "lending": {
+            "approval_rate": 0.9050014091529907,
+            "eo_gap_gender": 0.001971645579713077,
+            "eo_gap_age": 0.012353412050936097,
+            "eo_gap_intersection": 0.029421117222396154,
+            "within_limit": true,
+            "capital_expected_loss": 641691155.2432137,
+            "capital_capital": 1318765421.5489476,
+            "capital_capital_per_exposure": 0.0517243013920076
+          }
+        },
+        "expected profit, no fairness": {
+          "book": {
+            "approved": 40466,
+            "exposure": 25930720948.5,
+            "expected_loss": 708693653.6909965,
+            "capital": 1363902114.6438034,
+            "rwa": 17048776433.047543,
+            "capital_per_exposure": 0.05259792496138447,
+            "mean_pd_approved": 0.061321862041950226
+          },
+          "lending": {
+            "approval_rate": 0.8772736141522319,
+            "eo_gap_gender": 0.04515835752314146,
+            "eo_gap_age": 0.11993291389873428,
+            "eo_gap_intersection": 0.1554531646732178,
+            "within_limit": false,
+            "capital_expected_loss": 708693653.6909965,
+            "capital_capital": 1363902114.6438034,
+            "capital_capital_per_exposure": 0.05259792496138447
+          }
+        },
+        "expected profit + offsets (deployed)": {
+          "book": {
+            "approved": 42112,
+            "exposure": 26321649624.0,
+            "expected_loss": 737563960.5922563,
+            "capital": 1392098041.0117228,
+            "rwa": 17401225512.646534,
+            "capital_per_exposure": 0.052887948168051445,
+            "mean_pd_approved": 0.06412860006093979
+          },
+          "lending": {
+            "approval_rate": 0.9129577037310035,
+            "eo_gap_gender": 0.021010316172358046,
+            "eo_gap_age": 0.022201197779601722,
+            "eo_gap_intersection": 0.03292051786880845,
+            "within_limit": true,
+            "capital_expected_loss": 737563960.5922563,
+            "capital_capital": 1392098041.0117228,
+            "capital_capital_per_exposure": 0.052887948168051445
+          }
+        }
+      }
+    },
+    {
+      "scenario": "moderate recession",
+      "pd_factor": 1.5,
+      "logodds_shift": 0.5149745184934978,
+      "lgd": 0.45,
+      "mean_pd": 0.12209640443325043,
+      "policies": {
+        "single cut-off 1/6": {
+          "book": {
+            "approved": 39981,
+            "exposure": 24610628524.5,
+            "expected_loss": 890691894.6311721,
+            "capital": 1405911182.0440812,
+            "rwa": 17573889775.551014,
+            "capital_per_exposure": 0.05712617947341287,
+            "mean_pd_approved": 0.08355056494474411
+          },
+          "lending": {
+            "approval_rate": 0.7523793006265311,
+            "eo_gap_gender": 0.06583740483283873,
+            "eo_gap_age": 0.17616243524521635,
+            "eo_gap_intersection": 0.2174725668169576,
+            "within_limit": false,
+            "capital_expected_loss": 621226104.1268897,
+            "capital_capital": 1169939511.2276087,
+            "capital_capital_per_exposure": 0.0539573666521257
+          }
+        },
+        "5:1 group cut-offs (1.2)": {
+          "book": {
+            "approved": 41745,
+            "exposure": 25496050909.5,
+            "expected_loss": 1008572320.20066,
+            "capital": 1486530710.362003,
+            "rwa": 18581633879.52504,
+            "capital_per_exposure": 0.05830435135380561,
+            "mean_pd_approved": 0.09260071069002151
+          },
+          "lending": {
+            "approval_rate": 0.8012660697639127,
+            "eo_gap_gender": 0.005535124983646722,
+            "eo_gap_age": 0.0397504946997389,
+            "eo_gap_intersection": 0.06178888703096597,
+            "within_limit": true,
+            "capital_expected_loss": 723044655.4792867,
+            "capital_capital": 1260561188.97921,
+            "capital_capital_per_exposure": 0.05523565352941746
+          }
+        },
+        "expected profit, no fairness": {
+          "book": {
+            "approved": 40466,
+            "exposure": 25930720948.5,
+            "expected_loss": 1103338264.1862864,
+            "capital": 1534796368.371455,
+            "rwa": 19184954604.64319,
+            "capital_per_exposure": 0.05918834155902007,
+            "mean_pd_approved": 0.09553022682666779
+          },
+          "lending": {
+            "approval_rate": 0.7989247078717454,
+            "eo_gap_gender": 0.06884669912904484,
+            "eo_gap_age": 0.17565832286639282,
+            "eo_gap_intersection": 0.22761170987633972,
+            "within_limit": false,
+            "capital_expected_loss": 907662314.9013792,
+            "capital_capital": 1394987089.0001173,
+            "capital_capital_per_exposure": 0.05741806577636318
+          }
+        },
+        "expected profit + offsets (deployed)": {
+          "book": {
+            "approved": 42112,
+            "exposure": 26321649624.0,
+            "expected_loss": 1145971578.1376572,
+            "capital": 1566829213.705885,
+            "rwa": 19585365171.323563,
+            "capital_per_exposure": 0.05952625447446329,
+            "mean_pd_approved": 0.09956805408000946
+          },
+          "lending": {
+            "approval_rate": 0.8382292366726646,
+            "eo_gap_gender": 0.0408239527706008,
+            "eo_gap_age": 0.06612804609103873,
+            "eo_gap_intersection": 0.08205910374216552,
+            "within_limit": false,
+            "capital_expected_loss": 945588077.903472,
+            "capital_capital": 1429707458.6714294,
+            "capital_capital_per_exposure": 0.05775098691727602
+          }
+        }
+      }
+    },
+    {
+      "scenario": "severe recession",
+      "pd_factor": 2.0,
+      "logodds_shift": 0.9089677061990912,
+      "lgd": 0.55,
+      "mean_pd": 0.16279520094394684,
+      "policies": {
+        "single cut-off 1/6": {
+          "book": {
+            "approved": 39981,
+            "exposure": 24610628524.5,
+            "expected_loss": 1521868868.038113,
+            "capital": 1884243149.0337691,
+            "rwa": 23553039362.922115,
+            "capital_per_exposure": 0.07656217098063936,
+            "mean_pd_approved": 0.11661264300346375
+          },
+          "lending": {
+            "approval_rate": 0.6106618683200729,
+            "eo_gap_gender": 0.07826753340959469,
+            "eo_gap_age": 0.21400151954145347,
+            "eo_gap_intersection": 0.25806840428505357,
+            "within_limit": false,
+            "capital_expected_loss": 663642081.6540201,
+            "capital_capital": 1190511880.6454425,
+            "capital_capital_per_exposure": 0.06677157705682497
+          }
+        },
+        "5:1 group cut-offs (1.2)": {
+          "book": {
+            "approved": 41745,
+            "exposure": 25496050909.5,
+            "expected_loss": 1708450374.4988365,
+            "capital": 1986959979.1550856,
+            "rwa": 24836999739.43857,
+            "capital_per_exposure": 0.07793206823315257,
+            "mean_pd_approved": 0.12796397507190704
+          },
+          "lending": {
+            "approval_rate": 0.6615648101979318,
+            "eo_gap_gender": 0.020698290438533884,
+            "eo_gap_age": 0.05467185622261561,
+            "eo_gap_intersection": 0.08330813877220566,
+            "within_limit": false,
+            "capital_expected_loss": 795848215.4261539,
+            "capital_capital": 1310434621.7673545,
+            "capital_capital_per_exposure": 0.06870720956194763
+          }
+        },
+        "expected profit, no fairness": {
+          "book": {
+            "approved": 40466,
+            "exposure": 25930720948.5,
+            "expected_loss": 1852960842.301817,
+            "capital": 2043557552.3039536,
+            "rwa": 25544469403.79942,
+            "capital_per_exposure": 0.07880835848577385,
+            "mean_pd_approved": 0.13132531940937042
+          },
+          "lending": {
+            "approval_rate": 0.7185813081275608,
+            "eo_gap_gender": 0.08573545515633119,
+            "eo_gap_age": 0.21632640617998156,
+            "eo_gap_intersection": 0.2731673327774763,
+            "within_limit": false,
+            "capital_expected_loss": 1247235460.9953156,
+            "capital_capital": 1663732074.894578,
+            "capital_capital_per_exposure": 0.07420060254533128
+          }
+        },
+        "expected profit + offsets (deployed)": {
+          "book": {
+            "approved": 42112,
+            "exposure": 26321649624.0,
+            "expected_loss": 1920886633.4547787,
+            "capital": 2085152149.4433565,
+            "rwa": 26064401868.041958,
+            "capital_per_exposure": 0.07921814093073107,
+            "mean_pd_approved": 0.13643671572208405
+          },
+          "lending": {
+            "approval_rate": 0.7564550046610445,
+            "eo_gap_gender": 0.060538568268507675,
+            "eo_gap_age": 0.10921036600531042,
+            "eo_gap_intersection": 0.13502189381208718,
+            "within_limit": false,
+            "capital_expected_loss": 1298146158.8854907,
+            "capital_capital": 1707627947.6945174,
+            "capital_capital_per_exposure": 0.07461123888055975
+          }
+        }
+      }
+    }
+  ],
+  "lgd": 0.45,
+  "fairness_capital_effect": {
+    "extra_capital": 28195926.367919445,
+    "extra_capital_pct": 2.0672983834534975,
+    "extra_exposure": 390928675.5,
+    "capital_per_exposure_plain": 0.05259792496138447,
+    "capital_per_exposure_fair": 0.052887948168051445
+  },
+  "deployed_capital_by_group": {
+    "Female|35 and over": {
+      "capital": 701024576.7979994,
+      "capital_per_exposure": 0.05113095407524141
+    },
+    "Female|Under 35": {
+      "capital": 201100573.74777445,
+      "capital_per_exposure": 0.05671510037044802
+    },
+    "Male|35 and over": {
+      "capital": 339360874.24455357,
+      "capital_per_exposure": 0.052413586814326986
+    },
+    "Male|Under 35": {
+      "capital": 150612021.9806009,
+      "capital_per_exposure": 0.05813346116262504
+    }
+  }
+}

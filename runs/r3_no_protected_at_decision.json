@@ -1,0 +1,89 @@
+{
+  "run": "r3_no_protected_at_decision",
+  "time": "2026-10-22 22:29:01",
+  "method": "ExponentiatedGradient eps=0.01",
+  "objective": "expected cost 5:1 (ErrorRate costs)",
+  "constraint": "TPR parity on repaid, gender x age, training only",
+  "base_learner": "XGBoost 300 trees depth 4, 80,000 training applicants",
+  "iterations": 50,
+  "test": {
+    "approval_rate": 0.9022914995555749,
+    "roc_auc_of_mixture_score": 0.6587496893459471,
+    "eo_gap_gender": 0.010142381600536376,
+    "eo_gap_age": 0.038212887210295254,
+    "eo_gap_intersection": 0.04306011467416493,
+    "expected_cost": 0.3300669889652481
+  },
+  "bootstrap_95": {
+    "auc": {
+      "point": 0.6587496893459471,
+      "low": 0.6512570998456646,
+      "high": 0.6668522893158296
+    },
+    "ece": {
+      "point": 0.11221040311853223,
+      "low": 0.10923640976906601,
+      "high": 0.11513898308405764
+    },
+    "eo_gap_gender": {
+      "point": 0.010142381600536376,
+      "low": 0.004869468107135341,
+      "high": 0.015470928954569252
+    },
+    "eo_gap_age": {
+      "point": 0.038212887210295254,
+      "low": 0.03195906129461406,
+      "high": 0.044428990844463036
+    },
+    "B": 1000,
+    "level": 0.95
+  },
+  "passes_nfr3_at_upper_bound": true,
+  "note": "the mixture score is a vote share of up to 50 classifiers, not a probability, so its AUC understates the ranking; the decision is what matters here",
+  "compare_deployed_group_cutoffs": {
+    "expected_cost": 0.32774730634986016,
+    "gap_max": 0.012353412050936097
+  },
+  "compare_single_cutoff": {
+    "expected_cost": 0.3183818587811911,
+    "gap_max": 0.11589235160527744
+  },
+  "all_runs": [
+    {
+      "method": "reference (same budget, no constraint)",
+      "eps": null,
+      "test_gap_gender": 0.03450046960385522,
+      "test_gap_age": 0.10328828711603921,
+      "test_cost": 0.322891148351291,
+      "test_approval": 0.8762980466971622,
+      "test_auc": 0.7823715771787524
+    },
+    {
+      "method": "ExponentiatedGradient eps=0.01",
+      "eps": 0.01,
+      "test_gap_gender": 0.010142381600536376,
+      "test_gap_age": 0.038212887210295254,
+      "test_cost": 0.3300669889652481,
+      "test_approval": 0.9022914995555749,
+      "test_auc": 0.6587496893459471
+    },
+    {
+      "method": "ExponentiatedGradient eps=0.03",
+      "eps": 0.03,
+      "test_gap_gender": 0.017030789121157186,
+      "test_gap_age": 0.058649160476662576,
+      "test_cost": 0.32959004487610294,
+      "test_approval": 0.9009473843952566,
+      "test_auc": 0.6655938499730719
+    },
+    {
+      "method": "ExponentiatedGradient eps=0.05",
+      "eps": 0.05,
+      "test_gap_gender": 0.020103306197071125,
+      "test_gap_age": 0.06575421767998768,
+      "test_cost": 0.3270535694929217,
+      "test_approval": 0.899581589958159,
+      "test_auc": 0.6441632355927637
+    }
+  ]
+}
